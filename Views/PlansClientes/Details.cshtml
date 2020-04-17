@@ -1,0 +1,58 @@
+﻿@model ZOOLO.Models.PlansCliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlansCliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.NombreClie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.NombreClie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plans.ZonaPlans)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plans.ZonaPlans)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaPlansCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPlansCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumPersonasPlansClie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumPersonasPlansClie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPlansClie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPlansClie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPlansClie }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

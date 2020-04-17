@@ -1,0 +1,42 @@
+﻿@model ZOOLO.Models.Parqueadreo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Parqueadreo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Zoologico.NombreZoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zoologico.NombreZoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoPar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoPar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorHora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPar }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

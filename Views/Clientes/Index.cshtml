@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ZOOLO.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CiudadClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoClie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CiudadClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoClie)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdClie }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdClie }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdClie })
+        </td>
+    </tr>
+}
+
+</table>

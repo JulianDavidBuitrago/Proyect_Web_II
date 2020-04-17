@@ -1,0 +1,58 @@
+﻿@model ZOOLO.Models.Veterinario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Veterinario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreVete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreVete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoVete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoVete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionVete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionVete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoVete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoVete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoSangreVete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoSangreVete)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdVete }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
