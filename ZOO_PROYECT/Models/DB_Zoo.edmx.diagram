@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c22bcdd7c42e4bdd943a89d94160bba4" Name="Diagram1">
+        <EntityTypeShape EntityType="ZoologicoModel.Animal" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Cita" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Cliente" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Parqueadreo" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.ParqueadreoVehiculo" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Plans" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.PlansCliente" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Trabajador" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Vehiculo" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Veterinario" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Zona" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZoologicoModel.Zoologico" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="ZoologicoModel.FK__Animal__IdZona__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Cita__IdAnimCita__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Cita__IdVeteCita__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__PlansClie__IdCli__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Parqueadr__IdPar__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Parqueadr__IdZoo__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Parqueadr__IdVeh__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Plans__IdZooPlan__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__PlansClie__IdPla__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Trabajado__IdZon__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="ZoologicoModel.FK__Zona__IdZoo__37A5467C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

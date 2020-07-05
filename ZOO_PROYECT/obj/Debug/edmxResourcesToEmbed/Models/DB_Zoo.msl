@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZoologicoModelStoreContainer" CdmEntityContainer="ZoologicoEntities">
+    <EntitySetMapping Name="Animal">
+      <EntityTypeMapping TypeName="ZoologicoModel.Animal">
+        <MappingFragment StoreEntitySet="Animal">
+          <ScalarProperty Name="IdAnim" ColumnName="IdAnim" />
+          <ScalarProperty Name="IdZona" ColumnName="IdZona" />
+          <ScalarProperty Name="CategoriaAnim" ColumnName="CategoriaAnim" />
+          <ScalarProperty Name="NombreAnim" ColumnName="NombreAnim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cita">
+      <EntityTypeMapping TypeName="ZoologicoModel.Cita">
+        <MappingFragment StoreEntitySet="Cita">
+          <ScalarProperty Name="IdCita" ColumnName="IdCita" />
+          <ScalarProperty Name="IdAnimCita" ColumnName="IdAnimCita" />
+          <ScalarProperty Name="IdVeteCita" ColumnName="IdVeteCita" />
+          <ScalarProperty Name="FechaCita" ColumnName="FechaCita" />
+          <ScalarProperty Name="HoraCita" ColumnName="HoraCita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="ZoologicoModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="IdClie" ColumnName="IdClie" />
+          <ScalarProperty Name="NombreClie" ColumnName="NombreClie" />
+          <ScalarProperty Name="TelefonoClie" ColumnName="TelefonoClie" />
+          <ScalarProperty Name="DireccionClie" ColumnName="DireccionClie" />
+          <ScalarProperty Name="CiudadClie" ColumnName="CiudadClie" />
+          <ScalarProperty Name="FechaNacClie" ColumnName="FechaNacClie" />
+          <ScalarProperty Name="CorreoClie" ColumnName="CorreoClie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parqueadreo">
+      <EntityTypeMapping TypeName="ZoologicoModel.Parqueadreo">
+        <MappingFragment StoreEntitySet="Parqueadreo">
+          <ScalarProperty Name="IdPar" ColumnName="IdPar" />
+          <ScalarProperty Name="IdZooPar" ColumnName="IdZooPar" />
+          <ScalarProperty Name="TelefonoPar" ColumnName="TelefonoPar" />
+          <ScalarProperty Name="ValorHora" ColumnName="ValorHora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParqueadreoVehiculo">
+      <EntityTypeMapping TypeName="ZoologicoModel.ParqueadreoVehiculo">
+        <MappingFragment StoreEntitySet="ParqueadreoVehiculo">
+          <ScalarProperty Name="IdParqueadreoVehiculo" ColumnName="IdParqueadreoVehiculo" />
+          <ScalarProperty Name="IdPar" ColumnName="IdPar" />
+          <ScalarProperty Name="IdVehi" ColumnName="IdVehi" />
+          <ScalarProperty Name="FechaEntradaParVehi" ColumnName="FechaEntradaParVehi" />
+          <ScalarProperty Name="HoraEntradaParVehi" ColumnName="HoraEntradaParVehi" />
+          <ScalarProperty Name="FechaSalidaParVehi" ColumnName="FechaSalidaParVehi" />
+          <ScalarProperty Name="HoraSalidaParVehi" ColumnName="HoraSalidaParVehi" />
+          <ScalarProperty Name="NumPersonasPlansClie" ColumnName="NumPersonasPlansClie" />
+          <ScalarProperty Name="ValorPlansClie" ColumnName="ValorPlansClie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="ZoologicoModel.Plans">
+        <MappingFragment StoreEntitySet="Plans">
+          <ScalarProperty Name="IdPlans" ColumnName="IdPlans" />
+          <ScalarProperty Name="IdZooPlans" ColumnName="IdZooPlans" />
+          <ScalarProperty Name="ZonaPlans" ColumnName="ZonaPlans" />
+          <ScalarProperty Name="ValorPlans" ColumnName="ValorPlans" />
+          <ScalarProperty Name="ZonaAdicPlans" ColumnName="ZonaAdicPlans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlansCliente">
+      <EntityTypeMapping TypeName="ZoologicoModel.PlansCliente">
+        <MappingFragment StoreEntitySet="PlansCliente">
+          <ScalarProperty Name="IdPlansClie" ColumnName="IdPlansClie" />
+          <ScalarProperty Name="IdClie" ColumnName="IdClie" />
+          <ScalarProperty Name="IdPlans" ColumnName="IdPlans" />
+          <ScalarProperty Name="FechaPlansCliente" ColumnName="FechaPlansCliente" />
+          <ScalarProperty Name="NumPersonasPlansClie" ColumnName="NumPersonasPlansClie" />
+          <ScalarProperty Name="ValorPlansClie" ColumnName="ValorPlansClie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ZoologicoModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trabajador">
+      <EntityTypeMapping TypeName="ZoologicoModel.Trabajador">
+        <MappingFragment StoreEntitySet="Trabajador">
+          <ScalarProperty Name="IdTrab" ColumnName="IdTrab" />
+          <ScalarProperty Name="IdZona" ColumnName="IdZona" />
+          <ScalarProperty Name="NombreTrab" ColumnName="NombreTrab" />
+          <ScalarProperty Name="TelefonoTrab" ColumnName="TelefonoTrab" />
+          <ScalarProperty Name="DireccionTrab" ColumnName="DireccionTrab" />
+          <ScalarProperty Name="CorreoTrab" ColumnName="CorreoTrab" />
+          <ScalarProperty Name="TipoSangreTrab" ColumnName="TipoSangreTrab" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculo">
+      <EntityTypeMapping TypeName="ZoologicoModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="IdVehi" ColumnName="IdVehi" />
+          <ScalarProperty Name="MarcaVehi" ColumnName="MarcaVehi" />
+          <ScalarProperty Name="PlacaVehi" ColumnName="PlacaVehi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veterinario">
+      <EntityTypeMapping TypeName="ZoologicoModel.Veterinario">
+        <MappingFragment StoreEntitySet="Veterinario">
+          <ScalarProperty Name="IdVete" ColumnName="IdVete" />
+          <ScalarProperty Name="NombreVete" ColumnName="NombreVete" />
+          <ScalarProperty Name="TelefonoVete" ColumnName="TelefonoVete" />
+          <ScalarProperty Name="DireccionVete" ColumnName="DireccionVete" />
+          <ScalarProperty Name="CorreoVete" ColumnName="CorreoVete" />
+          <ScalarProperty Name="TipoSangreVete" ColumnName="TipoSangreVete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zona">
+      <EntityTypeMapping TypeName="ZoologicoModel.Zona">
+        <MappingFragment StoreEntitySet="Zona">
+          <ScalarProperty Name="IdZona" ColumnName="IdZona" />
+          <ScalarProperty Name="IdZoo" ColumnName="IdZoo" />
+          <ScalarProperty Name="NombreZona" ColumnName="NombreZona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zoologico">
+      <EntityTypeMapping TypeName="ZoologicoModel.Zoologico">
+        <MappingFragment StoreEntitySet="Zoologico">
+          <ScalarProperty Name="IdZoo" ColumnName="IdZoo" />
+          <ScalarProperty Name="NombreZoo" ColumnName="NombreZoo" />
+          <ScalarProperty Name="DireccionZoo" ColumnName="DireccionZoo" />
+          <ScalarProperty Name="TelefonoZoo" ColumnName="TelefonoZoo" />
+          <ScalarProperty Name="CorreoZoo" ColumnName="CorreoZoo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

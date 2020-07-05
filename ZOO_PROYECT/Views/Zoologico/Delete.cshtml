@@ -1,0 +1,56 @@
+﻿@model ZOO_PROYECT.Models.Zoologico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Zoologico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreZoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreZoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionZoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionZoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoZoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoZoo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CorreoZoo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CorreoZoo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ZOO_PROYECT.Models.ParqueadreoVehiculo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaEntradaParVehi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraEntradaParVehi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSalidaParVehi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraSalidaParVehi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumPersonasPlansClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorPlansClie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parqueadreo.TelefonoPar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehiculo.MarcaVehi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaEntradaParVehi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraEntradaParVehi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaSalidaParVehi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraSalidaParVehi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumPersonasPlansClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorPlansClie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parqueadreo.TelefonoPar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehiculo.MarcaVehi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdParqueadreoVehiculo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdParqueadreoVehiculo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdParqueadreoVehiculo })
+        </td>
+    </tr>
+}
+
+</table>

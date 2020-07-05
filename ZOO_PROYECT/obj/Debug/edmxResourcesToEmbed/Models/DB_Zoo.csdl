@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZoologicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Animal">
+    <Key>
+      <PropertyRef Name="IdAnim" />
+    </Key>
+    <Property Name="IdAnim" Type="Int32" Nullable="false" />
+    <Property Name="IdZona" Type="Int32" Nullable="false" />
+    <Property Name="CategoriaAnim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NombreAnim" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Zona" Relationship="Self.FK__Animal__IdZona__3D5E1FD2" FromRole="Animal" ToRole="Zona" />
+    <NavigationProperty Name="Cita" Relationship="Self.FK__Cita__IdAnimCita__4222D4EF" FromRole="Animal" ToRole="Cita" />
+  </EntityType>
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="IdCita" />
+    </Key>
+    <Property Name="IdCita" Type="Int32" Nullable="false" />
+    <Property Name="IdAnimCita" Type="Int32" Nullable="false" />
+    <Property Name="IdVeteCita" Type="Int32" Nullable="false" />
+    <Property Name="FechaCita" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HoraCita" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Animal" Relationship="Self.FK__Cita__IdAnimCita__4222D4EF" FromRole="Cita" ToRole="Animal" />
+    <NavigationProperty Name="Veterinario" Relationship="Self.FK__Cita__IdVeteCita__4316F928" FromRole="Cita" ToRole="Veterinario" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="IdClie" />
+    </Key>
+    <Property Name="IdClie" Type="Int32" Nullable="false" />
+    <Property Name="NombreClie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelefonoClie" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DireccionClie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CiudadClie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FechaNacClie" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CorreoClie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PlansCliente" Relationship="Self.FK__PlansClie__IdCli__2B3F6F97" FromRole="Cliente" ToRole="PlansCliente" />
+  </EntityType>
+  <EntityType Name="Parqueadreo">
+    <Key>
+      <PropertyRef Name="IdPar" />
+    </Key>
+    <Property Name="IdPar" Type="Int32" Nullable="false" />
+    <Property Name="IdZooPar" Type="Int32" Nullable="false" />
+    <Property Name="TelefonoPar" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ValorHora" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ParqueadreoVehiculo" Relationship="Self.FK__Parqueadr__IdPar__33D4B598" FromRole="Parqueadreo" ToRole="ParqueadreoVehiculo" />
+    <NavigationProperty Name="Zoologico" Relationship="Self.FK__Parqueadr__IdZoo__2F10007B" FromRole="Parqueadreo" ToRole="Zoologico" />
+  </EntityType>
+  <EntityType Name="ParqueadreoVehiculo">
+    <Key>
+      <PropertyRef Name="IdParqueadreoVehiculo" />
+    </Key>
+    <Property Name="IdParqueadreoVehiculo" Type="Int32" Nullable="false" />
+    <Property Name="IdPar" Type="Int32" Nullable="false" />
+    <Property Name="IdVehi" Type="Int32" Nullable="false" />
+    <Property Name="FechaEntradaParVehi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HoraEntradaParVehi" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="FechaSalidaParVehi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HoraSalidaParVehi" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="NumPersonasPlansClie" Type="Int32" Nullable="false" />
+    <Property Name="ValorPlansClie" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Parqueadreo" Relationship="Self.FK__Parqueadr__IdPar__33D4B598" FromRole="ParqueadreoVehiculo" ToRole="Parqueadreo" />
+    <NavigationProperty Name="Vehiculo" Relationship="Self.FK__Parqueadr__IdVeh__34C8D9D1" FromRole="ParqueadreoVehiculo" ToRole="Vehiculo" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="IdPlans" />
+    </Key>
+    <Property Name="IdPlans" Type="Int32" Nullable="false" />
+    <Property Name="IdZooPlans" Type="Int32" Nullable="false" />
+    <Property Name="ZonaPlans" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ValorPlans" Type="Int32" Nullable="false" />
+    <Property Name="ZonaAdicPlans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Zoologico" Relationship="Self.FK__Plans__IdZooPlan__286302EC" FromRole="Plans" ToRole="Zoologico" />
+    <NavigationProperty Name="PlansCliente" Relationship="Self.FK__PlansClie__IdPla__2C3393D0" FromRole="Plans" ToRole="PlansCliente" />
+  </EntityType>
+  <EntityType Name="PlansCliente">
+    <Key>
+      <PropertyRef Name="IdPlansClie" />
+    </Key>
+    <Property Name="IdPlansClie" Type="Int32" Nullable="false" />
+    <Property Name="IdClie" Type="Int32" Nullable="false" />
+    <Property Name="IdPlans" Type="Int32" Nullable="false" />
+    <Property Name="FechaPlansCliente" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NumPersonasPlansClie" Type="Int32" Nullable="false" />
+    <Property Name="ValorPlansClie" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__PlansClie__IdCli__2B3F6F97" FromRole="PlansCliente" ToRole="Cliente" />
+    <NavigationProperty Name="Plans" Relationship="Self.FK__PlansClie__IdPla__2C3393D0" FromRole="PlansCliente" ToRole="Plans" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trabajador">
+    <Key>
+      <PropertyRef Name="IdTrab" />
+    </Key>
+    <Property Name="IdTrab" Type="Int32" Nullable="false" />
+    <Property Name="IdZona" Type="Int32" Nullable="false" />
+    <Property Name="NombreTrab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelefonoTrab" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DireccionTrab" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CorreoTrab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TipoSangreTrab" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Zona" Relationship="Self.FK__Trabajado__IdZon__3A81B327" FromRole="Trabajador" ToRole="Zona" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="IdVehi" />
+    </Key>
+    <Property Name="IdVehi" Type="Int32" Nullable="false" />
+    <Property Name="MarcaVehi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PlacaVehi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ParqueadreoVehiculo" Relationship="Self.FK__Parqueadr__IdVeh__34C8D9D1" FromRole="Vehiculo" ToRole="ParqueadreoVehiculo" />
+  </EntityType>
+  <EntityType Name="Veterinario">
+    <Key>
+      <PropertyRef Name="IdVete" />
+    </Key>
+    <Property Name="IdVete" Type="Int32" Nullable="false" />
+    <Property Name="NombreVete" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelefonoVete" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DireccionVete" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CorreoVete" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TipoSangreVete" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cita" Relationship="Self.FK__Cita__IdVeteCita__4316F928" FromRole="Veterinario" ToRole="Cita" />
+  </EntityType>
+  <EntityType Name="Zona">
+    <Key>
+      <PropertyRef Name="IdZona" />
+    </Key>
+    <Property Name="IdZona" Type="Int32" Nullable="false" />
+    <Property Name="IdZoo" Type="Int32" Nullable="false" />
+    <Property Name="NombreZona" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Animal" Relationship="Self.FK__Animal__IdZona__3D5E1FD2" FromRole="Zona" ToRole="Animal" />
+    <NavigationProperty Name="Trabajador" Relationship="Self.FK__Trabajado__IdZon__3A81B327" FromRole="Zona" ToRole="Trabajador" />
+    <NavigationProperty Name="Zoologico" Relationship="Self.FK__Zona__IdZoo__37A5467C" FromRole="Zona" ToRole="Zoologico" />
+  </EntityType>
+  <EntityType Name="Zoologico">
+    <Key>
+      <PropertyRef Name="IdZoo" />
+    </Key>
+    <Property Name="IdZoo" Type="Int32" Nullable="false" />
+    <Property Name="NombreZoo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DireccionZoo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelefonoZoo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CorreoZoo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Parqueadreo" Relationship="Self.FK__Parqueadr__IdZoo__2F10007B" FromRole="Zoologico" ToRole="Parqueadreo" />
+    <NavigationProperty Name="Plans" Relationship="Self.FK__Plans__IdZooPlan__286302EC" FromRole="Zoologico" ToRole="Plans" />
+    <NavigationProperty Name="Zona" Relationship="Self.FK__Zona__IdZoo__37A5467C" FromRole="Zoologico" ToRole="Zona" />
+  </EntityType>
+  <Association Name="FK__Animal__IdZona__3D5E1FD2">
+    <End Role="Zona" Type="Self.Zona" Multiplicity="1" />
+    <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zona">
+        <PropertyRef Name="IdZona" />
+      </Principal>
+      <Dependent Role="Animal">
+        <PropertyRef Name="IdZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cita__IdAnimCita__4222D4EF">
+    <End Role="Animal" Type="Self.Animal" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Animal">
+        <PropertyRef Name="IdAnim" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="IdAnimCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cita__IdVeteCita__4316F928">
+    <End Role="Veterinario" Type="Self.Veterinario" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veterinario">
+        <PropertyRef Name="IdVete" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="IdVeteCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlansClie__IdCli__2B3F6F97">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="PlansCliente" Type="Self.PlansCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="IdClie" />
+      </Principal>
+      <Dependent Role="PlansCliente">
+        <PropertyRef Name="IdClie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parqueadr__IdPar__33D4B598">
+    <End Role="Parqueadreo" Type="Self.Parqueadreo" Multiplicity="1" />
+    <End Role="ParqueadreoVehiculo" Type="Self.ParqueadreoVehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parqueadreo">
+        <PropertyRef Name="IdPar" />
+      </Principal>
+      <Dependent Role="ParqueadreoVehiculo">
+        <PropertyRef Name="IdPar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parqueadr__IdZoo__2F10007B">
+    <End Role="Zoologico" Type="Self.Zoologico" Multiplicity="1" />
+    <End Role="Parqueadreo" Type="Self.Parqueadreo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zoologico">
+        <PropertyRef Name="IdZoo" />
+      </Principal>
+      <Dependent Role="Parqueadreo">
+        <PropertyRef Name="IdZooPar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parqueadr__IdVeh__34C8D9D1">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="ParqueadreoVehiculo" Type="Self.ParqueadreoVehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="IdVehi" />
+      </Principal>
+      <Dependent Role="ParqueadreoVehiculo">
+        <PropertyRef Name="IdVehi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Plans__IdZooPlan__286302EC">
+    <End Role="Zoologico" Type="Self.Zoologico" Multiplicity="1" />
+    <End Role="Plans" Type="Self.Plans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zoologico">
+        <PropertyRef Name="IdZoo" />
+      </Principal>
+      <Dependent Role="Plans">
+        <PropertyRef Name="IdZooPlans" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlansClie__IdPla__2C3393D0">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="1" />
+    <End Role="PlansCliente" Type="Self.PlansCliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="IdPlans" />
+      </Principal>
+      <Dependent Role="PlansCliente">
+        <PropertyRef Name="IdPlans" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trabajado__IdZon__3A81B327">
+    <End Role="Zona" Type="Self.Zona" Multiplicity="1" />
+    <End Role="Trabajador" Type="Self.Trabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zona">
+        <PropertyRef Name="IdZona" />
+      </Principal>
+      <Dependent Role="Trabajador">
+        <PropertyRef Name="IdZona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Zona__IdZoo__37A5467C">
+    <End Role="Zoologico" Type="Self.Zoologico" Multiplicity="1" />
+    <End Role="Zona" Type="Self.Zona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zoologico">
+        <PropertyRef Name="IdZoo" />
+      </Principal>
+      <Dependent Role="Zona">
+        <PropertyRef Name="IdZoo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZoologicoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Animal" EntityType="Self.Animal" />
+    <EntitySet Name="Cita" EntityType="Self.Cita" />
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Parqueadreo" EntityType="Self.Parqueadreo" />
+    <EntitySet Name="ParqueadreoVehiculo" EntityType="Self.ParqueadreoVehiculo" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" />
+    <EntitySet Name="PlansCliente" EntityType="Self.PlansCliente" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Trabajador" EntityType="Self.Trabajador" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
+    <EntitySet Name="Veterinario" EntityType="Self.Veterinario" />
+    <EntitySet Name="Zona" EntityType="Self.Zona" />
+    <EntitySet Name="Zoologico" EntityType="Self.Zoologico" />
+    <AssociationSet Name="FK__Animal__IdZona__3D5E1FD2" Association="Self.FK__Animal__IdZona__3D5E1FD2">
+      <End Role="Zona" EntitySet="Zona" />
+      <End Role="Animal" EntitySet="Animal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cita__IdAnimCita__4222D4EF" Association="Self.FK__Cita__IdAnimCita__4222D4EF">
+      <End Role="Animal" EntitySet="Animal" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cita__IdVeteCita__4316F928" Association="Self.FK__Cita__IdVeteCita__4316F928">
+      <End Role="Veterinario" EntitySet="Veterinario" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlansClie__IdCli__2B3F6F97" Association="Self.FK__PlansClie__IdCli__2B3F6F97">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="PlansCliente" EntitySet="PlansCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parqueadr__IdPar__33D4B598" Association="Self.FK__Parqueadr__IdPar__33D4B598">
+      <End Role="Parqueadreo" EntitySet="Parqueadreo" />
+      <End Role="ParqueadreoVehiculo" EntitySet="ParqueadreoVehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parqueadr__IdZoo__2F10007B" Association="Self.FK__Parqueadr__IdZoo__2F10007B">
+      <End Role="Zoologico" EntitySet="Zoologico" />
+      <End Role="Parqueadreo" EntitySet="Parqueadreo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parqueadr__IdVeh__34C8D9D1" Association="Self.FK__Parqueadr__IdVeh__34C8D9D1">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="ParqueadreoVehiculo" EntitySet="ParqueadreoVehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Plans__IdZooPlan__286302EC" Association="Self.FK__Plans__IdZooPlan__286302EC">
+      <End Role="Zoologico" EntitySet="Zoologico" />
+      <End Role="Plans" EntitySet="Plans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlansClie__IdPla__2C3393D0" Association="Self.FK__PlansClie__IdPla__2C3393D0">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="PlansCliente" EntitySet="PlansCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trabajado__IdZon__3A81B327" Association="Self.FK__Trabajado__IdZon__3A81B327">
+      <End Role="Zona" EntitySet="Zona" />
+      <End Role="Trabajador" EntitySet="Trabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Zona__IdZoo__37A5467C" Association="Self.FK__Zona__IdZoo__37A5467C">
+      <End Role="Zoologico" EntitySet="Zoologico" />
+      <End Role="Zona" EntitySet="Zona" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

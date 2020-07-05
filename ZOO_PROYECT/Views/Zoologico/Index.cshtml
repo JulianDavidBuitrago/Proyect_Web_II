@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ZOO_PROYECT.Models.Zoologico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreZoo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionZoo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoZoo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CorreoZoo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreZoo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionZoo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoZoo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CorreoZoo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdZoo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdZoo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdZoo })
+        </td>
+    </tr>
+}
+
+</table>
