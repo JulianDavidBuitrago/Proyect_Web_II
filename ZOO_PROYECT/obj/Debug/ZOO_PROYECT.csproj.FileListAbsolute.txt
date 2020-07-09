@@ -64,3 +64,4 @@ C:\Users\jdbor\source\repos\ZOO_PROYECT\ZOO_PROYECT\obj\Debug\ZOO_PROYECT.csproj
 C:\Users\jdbor\source\repos\ZOO_PROYECT\ZOO_PROYECT\obj\Debug\ZOO_PROYECT.csproj.CopyComplete
 C:\Users\jdbor\source\repos\ZOO_PROYECT\ZOO_PROYECT\obj\Debug\ZOO_PROYECT.dll
 C:\Users\jdbor\source\repos\ZOO_PROYECT\ZOO_PROYECT\obj\Debug\ZOO_PROYECT.pdb
+C:\Users\jdbor\source\repos\ZOO_PROYECT\ZOO_PROYECT\obj\Debug\ZOO_PROYECT.csprojAssemblyReference.cache
